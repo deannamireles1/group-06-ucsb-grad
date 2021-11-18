@@ -18,12 +18,14 @@ ucsb_grad <- read_csv(here("data", "ucsb_grad_data.csv"))
 ```
 
 
-```{r}
+```{r fig.cap="Figure 1. Bar graph showing the distribution of domestic students by ethicity from 2008-2019."}
 ggplot(data=ucsb_grad, aes(x=year_abbr, y=domestic_enrollment))+
   geom_col(aes(fill=ethnicity), 
            position = "fill") +
+  theme_minimal()+
   labs(x = "Year",
-          y = "Enrollment")
+          y = "Enrollment",
+       title = "Domestic Enrollment by Ethnicity from 2008-2019")
        
 ```
 
